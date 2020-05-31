@@ -1,0 +1,16 @@
+language: php
+
+php:
+  - 7.2
+  - 7.3
+
+matrix:
+  - COMPOSER_FLAGS="--prefer-lowest"
+  - COMPOSER_FLAGS=""
+
+before_script:
+  - composer config --global --auth http-basic.repo.packagist.com $username $password
+  - travis_retry composer update ${COMPOSER_FLAGS}
+
+script:
+  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover

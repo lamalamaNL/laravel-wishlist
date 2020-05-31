@@ -1,0 +1,40 @@
+{
+  "name": "lamalama/laravel-wishlist",
+  "description": "Make your models wishlistable",
+  "keywords": ["laravel", "wishlist"],
+  "type": "library",
+  "homepage": "https://github.com/lamalamaNL/laravel-wishlist",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "lamalamaMark",
+      "email": "mark@lamalama.nl"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "LamaLama\\Wishlist\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LamaLama\\Wishlist\\Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.1",
+    "orchestra/testbench": "^3.5"
+  },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "LamaLama\\Wishlist\\WishlistServiceProvider"
+        ],
+        "aliases": {
+            "Wishlist": "LamaLama\\Wishlist\\Facades\\Wishlist"
+        }
+    }
+  }
+}
