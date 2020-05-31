@@ -2,7 +2,7 @@
 
 namespace LamaLama\Wishlist;
 
-trait Wishlistable
+trait Wish
 {
     /**
      * wish
