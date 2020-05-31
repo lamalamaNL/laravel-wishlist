@@ -1,6 +1,6 @@
 <?php
 
-namespace LamaLama\Wishlist
+namespace LamaLama\Wishlist;
 
 use Illuminate\Support\ServiceProvider;
 use LamaLama\Wishlist\Wishlist;
