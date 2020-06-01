@@ -1,6 +1,6 @@
 <?php
 
-namespace LamaLama\Wishlist;
+namespace LamaLama\Wishlist\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
