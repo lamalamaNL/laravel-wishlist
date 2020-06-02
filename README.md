@@ -7,7 +7,7 @@
 
 > :warning: **This package is in a preliminary development phase and not stable**: Do not use in production!
 
-Make your models wishlistable. 
+Make your Eloquent models wishlistable.
 
 ## Install
 
@@ -33,6 +33,8 @@ You can optionally publish the config file with:
 php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider" --tag="config"
 ```
 
+## Use
+
 Add the ```HasWishlists``` trait to your User model.
 ```php
 use HasWishlists;
@@ -42,8 +44,6 @@ Optionally you can add the ```Wishlistable``` trait to Eloquent models that you 
 ```php
 use Wishlistable;
 ```
-
-## Use
 
 You can add any Eloquent model as 'wish' to the User model:
 
