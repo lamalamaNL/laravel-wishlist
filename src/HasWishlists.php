@@ -5,7 +5,7 @@ namespace LamaLama\Wishlist;
 use Illuminate\Database\Eloquent\Relations\hasMany;
 use LamaLama\Wishlist\Models\Wishlist;
 
-trait Wish
+trait HasWishlists
 {
     /**
      * Get the wishes for the user

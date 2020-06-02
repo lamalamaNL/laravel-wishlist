@@ -32,6 +32,16 @@ You can optionally publish the config file with:
 php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider" --tag="config"
 ```
 
+## Use
+
+Here are a few short examples of what you can do:
+
+```php
+$user = User::find(1);
+$product = Product::find(1);
+$user->wish($product)->onList('Christmas presents');
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
