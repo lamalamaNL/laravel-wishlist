@@ -7,5 +7,4 @@ use LamaLama\Wishlist\Models\Wishlist;
 
 trait Wishlistable
 {
-
 }
