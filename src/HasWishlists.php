@@ -11,14 +11,14 @@ trait HasWishlists
      * Add wish to a wishlist
      * @return void
      */
-    public function wish($model = null, $wishlist = null)
+    public function wish($model = null, string $collectionName = 'default')
     {
         if (! $model) {
             throw new Exception('Model not set');
         }
 
-        if (! $this->wishExists($model, $wishlist)) {
-            return $this->createWish($model, $wishlist);
+        if (! $this->wishExists($model, $collectionName)) {
+            return $this->createWish($model, $collectionName);
         }
     }
 
@@ -26,13 +26,31 @@ trait HasWishlists
      * Remove wish from a wishlist
      * @return void
      */
-    public function unwish($model = null, $wishlist = null)
+    public function unwish($model = null, string $collectionName = 'default')
     {
         if (! $model) {
             throw new Exception('Model not set');
         }
 
-        $this->deleteWish($model, $wishlist);
+        $this->deleteWish($model, $collectionName);
+    }
+
+    /**
+     * onList
+     * @return self
+     */
+    public function onList($collectionName)
+    {
+        return $this;
+    }
+
+    /**
+     * fromList
+     * @return self
+     */
+    public function fromList($collectionName)
+    {
+        return $this;
     }
 
     /**
@@ -63,12 +81,8 @@ trait HasWishlists
      * wishlist
      * @return void
      */
-    public function wishlist(string $collectionName = null)
+    public function wishlist(string $collectionName = 'default')
     {
-        if (! $collectionName) {
-            throw new Exception('Collection name not set');
-        }
-
         $items = DB::table('wishlist')
             ->where('user_id', $this->id)
             ->where('collection_name', $collectionName)
@@ -82,13 +96,13 @@ trait HasWishlists
      * @param  [type] $model
      * @return [type]
      */
-    private function wishExists($model)
+    private function wishExists($model, $collectionName)
     {
         return DB::table('wishlist')
             ->where('user_id', $this->id)
             ->where('model_type', get_class($model))
             ->where('model_id', $model->id)
-            ->where('collection_name', 'default')
+            ->where('collection_name', $collectionName)
             ->first();
     }
 
@@ -100,10 +114,6 @@ trait HasWishlists
      */
     private function createWish($model, $collectionName)
     {
-        if (! $collectionName) {
-            $collectionName = config('wishlist.default_list_name');
-        }
-
         DB::table('wishlist')
             ->insert([
                 'user_id' => $this->id,
@@ -121,10 +131,6 @@ trait HasWishlists
      */
     private function deleteWish($model, $collectionName)
     {
-        if (! $collectionName) {
-            $collectionName = config('wishlist.default_list_name');
-        }
-
         DB::table('wishlist')
             ->where('user_id', $this->id)
             ->where('model_type', get_class($model))
