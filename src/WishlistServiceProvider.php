@@ -3,7 +3,6 @@
 namespace LamaLama\Wishlist;
 
 use Illuminate\Support\ServiceProvider;
-use LamaLama\Wishlist\Wishlist;
 
 class WishlistServiceProvider extends ServiceProvider
 {
