@@ -51,7 +51,7 @@ $product = Product::find(1);
 $user->wish($product);
 ```
 
-Optionally you can set the name of the wishlist to which you want to add the wish. When no list is specified the wish will be stored on the 'default' list. The name of the default list can be adjusted via in the config file.
+Optionally you can set the name of the wishlist to which you want to add the wish. When no list is specified the wish will be stored on the 'default' list. The name of the default list can be adjusted in the config file.
 ```php
 $user->wish($product)->onList('Christmas presents');
 ```
@@ -61,6 +61,16 @@ You can remove any Eloquent model as 'wish' from the User model:
 ```php
 $user->unwish($product);
 $user->unwish($product)->fromList('Christmas presents');
+```
+
+Get all wishlists
+```php
+$user->wishlists();
+```
+
+Get a specific wishlist
+```php
+$user->wishlist('default');
 ```
 
 ## Change log
