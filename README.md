@@ -32,14 +32,32 @@ You can optionally publish the config file with:
 php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider" --tag="config"
 ```
 
+Add the ```HasWishlists``` trait to your User model.
+```php
+use HasWishlists;
+```
+
+Optionally you can add the ```Wishlistable``` trait to Eloquent models that you want to give additional methods.
+```php
+use Wishlistable;
+```
+
 ## Use
 
-Here are a few short examples of what you can do:
+You can add any Eloquent model as 'wish' to the User model:
 
 ```php
 $user = User::find(1);
 $product = Product::find(1);
 $user->wish($product)->onList('Christmas presents');
+```
+
+You can remove any Eloquent model as 'wish' from the User model:
+
+```php
+$user = User::find(1);
+$product = Product::find(1);
+$user->unwish($product)->fromList('Christmas presents');
 ```
 
 ## Change log
