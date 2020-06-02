@@ -1,7 +1,6 @@
 # Laravel Wishlist
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lamalama/laravel-wishlist.svg?style=flat-square)](https://packagist.org/packages/lamalama/laravel-wishlist)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lamalama/laravel-wishlist/run-tests?label=tests)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![StyleCI](https://github.styleci.io/repos/268217938/shield?branch=master)](https://github.styleci.io/repos/268217938)
 [![Total Downloads](https://img.shields.io/packagist/dt/lamalama/laravel-wishlist.svg?style=flat-square)](https://packagist.org/packages/lamalama/laravel-wishlist)
@@ -49,14 +48,18 @@ You can add any Eloquent model as 'wish' to the User model:
 ```php
 $user = User::find(1);
 $product = Product::find(1);
+$user->wish($product);
+```
+
+Optionally you can set the name of the wishlist to which you want to add the wish. When no list is specified the wish will be stored on the 'default' list. The name of the default list can be adjusted via in the config file.
+```php
 $user->wish($product)->onList('Christmas presents');
 ```
 
 You can remove any Eloquent model as 'wish' from the User model:
 
 ```php
-$user = User::find(1);
-$product = Product::find(1);
+$user->unwish($product);
 $user->unwish($product)->fromList('Christmas presents');
 ```
 
