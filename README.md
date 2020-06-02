@@ -5,6 +5,8 @@
 [![StyleCI](https://github.styleci.io/repos/268217938/shield?branch=master)](https://github.styleci.io/repos/268217938)
 [![Total Downloads](https://img.shields.io/packagist/dt/lamalama/laravel-wishlist.svg?style=flat-square)](https://packagist.org/packages/lamalama/laravel-wishlist)
 
+> :warning: **This package is in a preliminary development phase and not stable**: Do not use in production!
+
 Make your models wishlistable. 
 
 ## Install
