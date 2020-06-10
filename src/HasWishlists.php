@@ -32,7 +32,20 @@ trait HasWishlists
             throw new Exception('Model not set');
         }
 
-        $this->deleteWish($model, $collectionName);
+        return $this->deleteWish($model, $collectionName);
+    }
+
+    /**
+     * Has Model On List.
+     * @return void
+     */
+    public function hasModelOnList($model = null, string $collectionName = 'default')
+    {
+        if (! $model) {
+            throw new Exception('Model not set');
+        }
+
+        return $this->findWish($model, $collectionName);
     }
 
     /**
@@ -94,7 +107,8 @@ trait HasWishlists
     /**
      * wishExists
      * @param  [type] $model
-     * @return [type]
+     * @param  string $collectionName
+     * @return Model|boolean
      */
     private function wishExists($model, $collectionName)
     {
@@ -109,12 +123,12 @@ trait HasWishlists
     /**
      * createWish
      * @param  [type] $model
-     * @param  [type] $collectionName
-     * @return [type]
+     * @param  string $collectionName
+     * @return Model
      */
     private function createWish($model, $collectionName)
     {
-        DB::table('wishlist')
+        return DB::table('wishlist')
             ->insert([
                 'user_id' => $this->id,
                 'model_type' => get_class($model),
@@ -126,17 +140,33 @@ trait HasWishlists
     /**
      * deleteWish
      * @param  [type] $model
-     * @param  [type] $collectionName
+     * @param  string $collectionName
      * @return [type]
      */
     private function deleteWish($model, $collectionName)
     {
-        DB::table('wishlist')
+        return DB::table('wishlist')
             ->where('user_id', $this->id)
             ->where('model_type', get_class($model))
             ->where('model_id', $model->id)
             ->where('collection_name', $collectionName)
             ->delete();
+    }
+
+    /**
+     * findWish
+     * @param  [type] $model
+     * @param  string $collectionName
+     * @return Model|boolean
+     */
+    private function findWish($model, $collectionName)
+    {
+        return DB::table('wishlist')
+            ->where('user_id', $this->id)
+            ->where('model_type', get_class($model))
+            ->where('model_id', $model->id)
+            ->where('collection_name', $collectionName)
+            ->first();
     }
 
     /**
