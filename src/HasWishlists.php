@@ -154,7 +154,6 @@ trait HasWishlists
     }
 
     /**
-<<<<<<< HEAD
      * findWish
      * @param  [type] $model
      * @param  string $collectionName
@@ -177,6 +176,10 @@ trait HasWishlists
      */
     private function wishResponse($items)
     {
+        if (! $items) {
+            return collect([]);
+        }
+
         foreach ($items as $item) {
             $types[$item->model_type][] = $item->id;
         }
@@ -201,6 +204,10 @@ trait HasWishlists
      */
     private function wishlistResponse($items)
     {
+        if (! $items) {
+            return collect([]);
+        }
+
         foreach ($items as $item) {
             $lists[$item->collection_name][] = $item->id;
         }
