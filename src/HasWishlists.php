@@ -108,7 +108,7 @@ trait HasWishlists
      * wishExists.
      * @param  [type] $model
      * @param  string $collectionName
-     * @return Model|boolean
+     * @return Model|bool
      */
     private function wishExists($model, $collectionName)
     {
@@ -154,11 +154,11 @@ trait HasWishlists
     }
 
     /**
-<<<<<<< HEAD
-     * findWish
+     * <<<<<<< HEAD
+     * findWish.
      * @param  [type] $model
      * @param  string $collectionName
-     * @return Model|boolean
+     * @return Model|bool
      */
     private function findWish($model, $collectionName)
     {
