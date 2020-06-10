@@ -8,7 +8,7 @@ use Exception;
 trait HasWishlists
 {
     /**
-     * Add wish to a wishlist
+     * Add wish to a wishlist.
      * @return void
      */
     public function wish($model = null, string $collectionName = 'default')
@@ -23,7 +23,7 @@ trait HasWishlists
     }
 
     /**
-     * Remove wish from a wishlist
+     * Remove wish from a wishlist.
      * @return void
      */
     public function unwish($model = null, string $collectionName = 'default')
@@ -49,7 +49,7 @@ trait HasWishlists
     }
 
     /**
-     * onList
+     * onList.
      * @return self
      */
     public function onList($collectionName)
@@ -58,7 +58,7 @@ trait HasWishlists
     }
 
     /**
-     * fromList
+     * fromList.
      * @return self
      */
     public function fromList($collectionName)
@@ -67,7 +67,7 @@ trait HasWishlists
     }
 
     /**
-     * Get all wishes for the user
+     * Get all wishes for the user.
      */
     public function wishes()
     {
@@ -79,7 +79,7 @@ trait HasWishlists
     }
 
     /**
-     * Get all wishlists for the user
+     * Get all wishlists for the user.
      */
     public function wishlists()
     {
@@ -91,7 +91,7 @@ trait HasWishlists
     }
 
     /**
-     * wishlist
+     * wishlist.
      * @return void
      */
     public function wishlist(string $collectionName = 'default')
@@ -105,7 +105,7 @@ trait HasWishlists
     }
 
     /**
-     * wishExists
+     * wishExists.
      * @param  [type] $model
      * @param  string $collectionName
      * @return Model|boolean
@@ -121,7 +121,7 @@ trait HasWishlists
     }
 
     /**
-     * createWish
+     * createWish.
      * @param  [type] $model
      * @param  string $collectionName
      * @return Model
@@ -133,12 +133,12 @@ trait HasWishlists
                 'user_id' => $this->id,
                 'model_type' => get_class($model),
                 'model_id' => $model->id,
-                'collection_name' => $collectionName
+                'collection_name' => $collectionName,
             ]);
     }
 
     /**
-     * deleteWish
+     * deleteWish.
      * @param  [type] $model
      * @param  string $collectionName
      * @return [type]
@@ -154,6 +154,7 @@ trait HasWishlists
     }
 
     /**
+<<<<<<< HEAD
      * findWish
      * @param  [type] $model
      * @param  string $collectionName
@@ -170,7 +171,7 @@ trait HasWishlists
     }
 
     /**
-     * wishResponse
+     * wishResponse.
      * @param  [type] $items
      * @return [type]
      */
@@ -194,7 +195,7 @@ trait HasWishlists
     }
 
     /**
-     * wishlistResponse
+     * wishlistResponse.
      * @param  [type] $items
      * @return [type]
      */
