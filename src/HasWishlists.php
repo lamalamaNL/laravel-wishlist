@@ -184,6 +184,10 @@ trait HasWishlists
             $types[$item->model_type][] = $item->id;
         }
 
+        if (! isset($types)) {
+            return collect([]);
+        }
+
         foreach ($types as $type => $ids) {
             $models[] = $type::whereIn('id', $ids)->get();
         }
