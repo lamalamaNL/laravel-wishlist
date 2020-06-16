@@ -1,7 +1,10 @@
 {
   "name": "lamalama/laravel-wishlist",
   "description": "Make your models wishlistable",
-  "keywords": ["laravel", "wishlist"],
+  "keywords": [
+    "laravel",
+    "wishlist"
+  ],
   "type": "library",
   "homepage": "https://github.com/lamalamaNL/laravel-wishlist",
   "license": "MIT",
