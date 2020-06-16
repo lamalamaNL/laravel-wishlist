@@ -181,7 +181,7 @@ trait HasWishlists
         }
 
         foreach ($items as $item) {
-            $types[$item->model_type][] = $item->id;
+            $types[$item->model_type][] = $item->model_id;
         }
 
         if (! isset($types)) {
@@ -213,12 +213,12 @@ trait HasWishlists
         }
 
         foreach ($items as $item) {
-            $lists[$item->collection_name][] = $item->id;
+            $lists[$item->collection_name][] = $item->model_id;
         }
 
         foreach ($lists as $collectionName => $listItems) {
             foreach ($items as $item) {
-                $types[$item->model_type][] = $item->id;
+                $types[$item->model_type][] = $item->model_id;
             }
 
             $models = [];
