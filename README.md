@@ -79,12 +79,9 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Credits
 
+- [Lama Lama](https://github.com/lamalamaNL)
 - [Mark de Vries](https://github.com/lamalamaMark)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/lamalama/laravel-wishlist.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[link-packagist]: https://packagist.org/packages/lamalama/laravel-wishlist

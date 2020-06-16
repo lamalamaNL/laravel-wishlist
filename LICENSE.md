@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2018-2019 Chimp BV <info@chimp.nl>
+Copyright (c) 2011-2020 Lama Lama BV <info@lamalama.nl>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
