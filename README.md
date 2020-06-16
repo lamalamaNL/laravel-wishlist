@@ -5,8 +5,6 @@
 [![StyleCI](https://github.styleci.io/repos/268217938/shield?branch=master)](https://github.styleci.io/repos/268217938)
 [![Total Downloads](https://img.shields.io/packagist/dt/lamalama/laravel-wishlist.svg?style=flat-square)](https://packagist.org/packages/lamalama/laravel-wishlist)
 
-> :warning: **This package is in a preliminary development phase and not stable**: Do not use in production!
-
 Make your Eloquent models wishlistable.
 
 ## Install
@@ -55,14 +53,14 @@ $user->wish($product);
 
 Optionally you can set the name of the wishlist to which you want to add the wish. When no list is specified the wish will be stored on the 'default' list. The name of the default list can be adjusted in the config file.
 ```php
-$user->wish($product)->onList('Christmas presents');
+$user->wish($product, 'Christmas presents');
 ```
 
 You can remove any Eloquent model as 'wish' from the User model:
 
 ```php
 $user->unwish($product);
-$user->unwish($product)->fromList('Christmas presents');
+$user->unwish($product, 'Christmas presents');
 ```
 
 Get all wishlists
@@ -72,7 +70,7 @@ $user->wishlists();
 
 Get a specific wishlist
 ```php
-$user->wishlist('default');
+$user->wishlist('Christmas presents');
 ```
 
 ## Change log
