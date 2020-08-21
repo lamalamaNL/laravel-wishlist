@@ -49,24 +49,6 @@ trait HasWishlists
     }
 
     /**
-     * onList.
-     * @return self
-     */
-    public function onList($collectionName)
-    {
-        return $this;
-    }
-
-    /**
-     * fromList.
-     * @return self
-     */
-    public function fromList($collectionName)
-    {
-        return $this;
-    }
-
-    /**
      * Get all wishes for the user.
      */
     public function wishes()

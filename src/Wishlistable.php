@@ -7,6 +7,17 @@ use DB;
 
 trait Wishlistable
 {
+    /**
+     * Get all of the wishes for the model.
+     */
+    public function wishes()
+    {
+        return $this->morphToMany('App\Models\User', 'model', 'wishlist');
+    }
+
+    /**
+     * isWished.
+     */
     public function isWished()
     {
         return DB::table('wishlist')
