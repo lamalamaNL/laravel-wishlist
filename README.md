@@ -35,12 +35,12 @@ php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider
 
 Add the ```HasWishlists``` trait to your User model.
 ```php
-use HasWishlists;
+use LamaLama\Wishlist\HasWishlists;
 ```
 
 Optionally you can add the ```Wishlistable``` trait to Eloquent models that you want to give additional methods.
 ```php
-use Wishlistable;
+use LamaLama\Wishlist\Wishlistable;
 ```
 
 You can add any Eloquent model as 'wish' to the User model:
