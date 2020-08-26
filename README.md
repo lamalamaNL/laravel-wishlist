@@ -31,7 +31,7 @@ You can optionally publish the config file with:
 php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider" --tag="config"
 ```
 
-## Use
+## Prepare models
 
 Import the ```HasWishlists``` trait to your User model file.
 ```php
@@ -53,6 +53,8 @@ Add the ```Wishlistable``` trait to your wishlistable model.
 ```php
 use Wishlistable;
 ```
+
+## Use
 
 You can add any Eloquent model as 'wish' to the User model:
 
