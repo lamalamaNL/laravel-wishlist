@@ -31,17 +31,32 @@ You can optionally publish the config file with:
 php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider" --tag="config"
 ```
 
-## Use
+## Prepare user model
 
-Add the ```HasWishlists``` trait to your User model.
+Import the ```HasWishlists``` trait to your User model file.
 ```php
 use LamaLama\Wishlist\HasWishlists;
 ```
 
+Add the ```HasWishlists``` trait to your User model.
+```php
+use HasWishlists;
+```
+
+## Prepare wishlistable model(s)
+
 Optionally you can add the ```Wishlistable``` trait to Eloquent models that you want to give additional methods.
+Import the ```Wishlistable``` trait to your wishlistable model file.
 ```php
 use LamaLama\Wishlist\Wishlistable;
 ```
+
+Add the ```Wishlistable``` trait to your wishlistable model.
+```php
+use Wishlistable;
+```
+
+## Use
 
 You can add any Eloquent model as 'wish' to the User model:
 
