@@ -9,6 +9,7 @@ class Wishlist
 {
     /**
      * getCount.
+     *
      * @return int
      */
     public function getCount(): int

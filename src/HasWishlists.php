@@ -9,6 +9,7 @@ trait HasWishlists
 {
     /**
      * Add wish to a wishlist.
+     *
      * @return void
      */
     public function wish($model = null, string $collectionName = 'default')
@@ -24,6 +25,7 @@ trait HasWishlists
 
     /**
      * Remove wish from a wishlist.
+     *
      * @return void
      */
     public function unwish($model = null, string $collectionName = 'default')
@@ -37,6 +39,7 @@ trait HasWishlists
 
     /**
      * Has Model On List.
+     *
      * @return void
      */
     public function hasModelOnList($model = null, string $collectionName = 'default')
@@ -74,6 +77,7 @@ trait HasWishlists
 
     /**
      * wishlist.
+     *
      * @return void
      */
     public function wishlist(string $collectionName = 'default')
@@ -88,8 +92,9 @@ trait HasWishlists
 
     /**
      * wishExists.
+     *
      * @param  [type] $model
-     * @param  string $collectionName
+     * @param  string  $collectionName
      * @return Model|bool
      */
     private function wishExists($model, $collectionName)
@@ -104,8 +109,9 @@ trait HasWishlists
 
     /**
      * createWish.
+     *
      * @param  [type] $model
-     * @param  string $collectionName
+     * @param  string  $collectionName
      * @return Model
      */
     private function createWish($model, $collectionName)
@@ -121,8 +127,9 @@ trait HasWishlists
 
     /**
      * deleteWish.
+     *
      * @param  [type] $model
-     * @param  string $collectionName
+     * @param  string  $collectionName
      * @return [type]
      */
     private function deleteWish($model, $collectionName)
@@ -137,8 +144,9 @@ trait HasWishlists
 
     /**
      * findWish.
+     *
      * @param  [type] $model
-     * @param  string $collectionName
+     * @param  string  $collectionName
      * @return Model|bool
      */
     private function findWish($model, $collectionName)
@@ -153,6 +161,7 @@ trait HasWishlists
 
     /**
      * wishResponse.
+     *
      * @param  [type] $items
      * @return [type]
      */
@@ -185,6 +194,7 @@ trait HasWishlists
 
     /**
      * wishlistResponse.
+     *
      * @param  [type] $items
      * @return [type]
      */
