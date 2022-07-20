@@ -4,5 +4,5 @@ return [
     /*
      * The user model
      */
-    'user_model' => 'App\User',
+    'user_model' => 'App\Models\User',
 ];
