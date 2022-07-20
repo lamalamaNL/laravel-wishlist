@@ -78,6 +78,7 @@ trait HasWishlists
     /**
      * wishlist.
      *
+     * @param  string  $collectionName
      * @return void
      */
     public function wishlist(string $collectionName = 'default')
@@ -93,11 +94,11 @@ trait HasWishlists
     /**
      * wishExists.
      *
-     * @param  [type] $model
+     * @param  Model  $model
      * @param  string  $collectionName
      * @return Model|bool
      */
-    private function wishExists($model, $collectionName)
+    private function wishExists($model, string $collectionName)
     {
         return DB::table('wishlist')
             ->where('user_id', $this->id)
@@ -110,11 +111,11 @@ trait HasWishlists
     /**
      * createWish.
      *
-     * @param  [type] $model
+     * @param  Model  $model
      * @param  string  $collectionName
      * @return Model
      */
-    private function createWish($model, $collectionName)
+    private function createWish($model, string $collectionName)
     {
         return DB::table('wishlist')
             ->insert([
@@ -128,11 +129,11 @@ trait HasWishlists
     /**
      * deleteWish.
      *
-     * @param  [type] $model
+     * @param  Model  $model
      * @param  string  $collectionName
-     * @return [type]
+     * @return void
      */
-    private function deleteWish($model, $collectionName)
+    private function deleteWish($model, string $collectionName)
     {
         return DB::table('wishlist')
             ->where('user_id', $this->id)
@@ -145,11 +146,11 @@ trait HasWishlists
     /**
      * findWish.
      *
-     * @param  [type] $model
+     * @param  Model  $model
      * @param  string  $collectionName
      * @return Model|bool
      */
-    private function findWish($model, $collectionName)
+    private function findWish($model, string $collectionName)
     {
         return DB::table('wishlist')
             ->where('user_id', $this->id)
@@ -195,8 +196,8 @@ trait HasWishlists
     /**
      * wishlistResponse.
      *
-     * @param  [type] $items
-     * @return [type]
+     * @param  array  $items
+     * @return Illuminate\Database\Eloquent\Collection
      */
     private function wishlistResponse($items)
     {
