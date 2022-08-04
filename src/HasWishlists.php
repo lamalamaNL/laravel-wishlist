@@ -4,9 +4,27 @@ namespace LamaLama\Wishlist;
 
 use DB;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 trait HasWishlists
 {
+    /**
+     * Count wishlist for user.
+     *
+     * @param array $collections
+     * @return int
+     */
+    public function countWishlist(array $collections = []): int
+    {
+        $query = DB::table('wishlist')->where('user_id', Auth::id());
+
+        if (!empty($collections)) {
+            $query->whereIn('collection_name', $collections);
+        }
+
+        return $query->count();
+    }
+
     /**
      * Add wish to a wishlist.
      *

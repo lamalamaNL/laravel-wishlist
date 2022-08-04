@@ -11,11 +11,12 @@ Make your Eloquent models wishlistable.
 
 Via Composer
 
-``` bash
+```bash
 $ composer require lamalama/laravel-wishlist
 ```
 
 You can publish the migration with:
+
 ```bash
 php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider" --tag="migrations"
 ```
@@ -27,6 +28,7 @@ php artisan migrate
 ```
 
 You can optionally publish the config file with:
+
 ```bash
 php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider" --tag="config"
 ```
@@ -34,11 +36,13 @@ php artisan vendor:publish --provider="LamaLama\Wishlist\WishlistServiceProvider
 ## Prepare user model
 
 Import the ```HasWishlists``` trait to your User model file.
+
 ```php
 use LamaLama\Wishlist\HasWishlists;
 ```
 
 Add the ```HasWishlists``` trait to your User model.
+
 ```php
 use HasWishlists;
 ```
@@ -47,11 +51,13 @@ use HasWishlists;
 
 Optionally you can add the ```Wishlistable``` trait to Eloquent models that you want to give additional methods.
 Import the ```Wishlistable``` trait to your wishlistable model file.
+
 ```php
 use LamaLama\Wishlist\Wishlistable;
 ```
 
 Add the ```Wishlistable``` trait to your wishlistable model.
+
 ```php
 use Wishlistable;
 ```
@@ -67,6 +73,7 @@ $user->wish($product);
 ```
 
 Optionally you can set the name of the wishlist to which you want to add the wish. When no list is specified the wish will be stored on the 'default' list. The name of the default list can be adjusted in the config file.
+
 ```php
 $user->wish($product, 'Christmas presents');
 ```
@@ -79,13 +86,27 @@ $user->unwish($product, 'Christmas presents');
 ```
 
 Get all wishlists
+
 ```php
 $user->wishlists();
 ```
 
 Get a specific wishlist
+
 ```php
 $user->wishlist('Christmas presents');
+```
+
+Count wishlist
+
+```php
+$user->countWishlist();
+```
+
+Count wishlist by collections
+
+```php
+$user->countWishlist(['default', 'Christmas presents']);
 ```
 
 ## Change log
