@@ -107,6 +107,7 @@ Count wishlist by collections
 
 ```php
 $user->countWishlist(['default', 'Christmas presents']);
+$user->countWishlist('default', 'Christmas presents');
 ```
 
 ## Change log

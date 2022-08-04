@@ -10,16 +10,16 @@ trait HasWishlists
     /**
      * Count wishlist for user.
      *
-     * @param  array  $collections
+     * @param  array|string  $collections
      * @return int
      */
-    public function countWishlist(array $collections = []): int
+    public function countWishlist($collections): int
     {
-        $query = DB::table('wishlist')->where('user_id', $this->id);
+        $collections = is_string($collections) ? func_get_args() : $collections;
 
-        if (! empty($collections)) {
-            $query->whereIn('collection_name', $collections);
-        }
+        $query = DB::table('wishlist')
+            ->where('user_id', $this->id)
+            ->whereIn('collection_name', $collections);
 
         return $query->count();
     }
