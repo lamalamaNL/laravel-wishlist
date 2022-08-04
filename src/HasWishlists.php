@@ -4,7 +4,6 @@ namespace LamaLama\Wishlist;
 
 use DB;
 use Exception;
-use Illuminate\Support\Facades\Auth;
 
 trait HasWishlists
 {
@@ -16,7 +15,7 @@ trait HasWishlists
      */
     public function countWishlist(array $collections = []): int
     {
-        $query = DB::table('wishlist')->where('user_id', Auth::id());
+        $query = DB::table('wishlist')->where('user_id', $this->id);
 
         if (! empty($collections)) {
             $query->whereIn('collection_name', $collections);
