@@ -97,7 +97,7 @@ Get a specific wishlist
 $user->wishlist('Christmas presents');
 ```
 
-Count wishlist
+Count all wishlist
 
 ```php
 $user->countWishlist();
