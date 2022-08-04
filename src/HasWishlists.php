@@ -11,14 +11,14 @@ trait HasWishlists
     /**
      * Count wishlist for user.
      *
-     * @param array $collections
+     * @param  array  $collections
      * @return int
      */
     public function countWishlist(array $collections = []): int
     {
         $query = DB::table('wishlist')->where('user_id', Auth::id());
 
-        if (!empty($collections)) {
+        if (! empty($collections)) {
             $query->whereIn('collection_name', $collections);
         }
 
