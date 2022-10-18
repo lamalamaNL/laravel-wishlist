@@ -2,7 +2,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lamalama/laravel-wishlist.svg?style=flat-square)](https://packagist.org/packages/lamalama/laravel-wishlist)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![StyleCI](https://github.styleci.io/repos/268217938/shield?branch=master)](https://github.styleci.io/repos/268217938)
 [![Total Downloads](https://img.shields.io/packagist/dt/lamalama/laravel-wishlist.svg?style=flat-square)](https://packagist.org/packages/lamalama/laravel-wishlist)
 
 Make your Eloquent models wishlistable.
